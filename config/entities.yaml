@@ -1,0 +1,105 @@
+energy_majors:
+  - Shell
+  - BP
+  - TotalEnergies
+  - ExxonMobil
+  - Chevron
+  - Equinor
+  - Eni
+  - Repsol
+  - Galp
+  - Petrobras
+  - Saudi Aramco
+  - ADNOC
+  - QatarEnergy
+  - ConocoPhillips
+  - Occidental Petroleum
+  - PetroChina
+  - Sinopec
+  - CNOOC
+  - OMV
+  - Neste
+  - Phillips 66
+  - Valero
+
+utilities_renewables:
+  - Iberdrola
+  - EDP
+  - Enel
+  - Engie
+  - RWE
+  - Orsted
+  - Vestas
+  - Siemens Energy
+  - NextEra Energy
+  - Brookfield Renewable
+  - Acciona Energia
+  - Statkraft
+  - Fortum
+  - SSE
+  - National Grid
+
+commodity_traders:
+  - Vitol
+  - Trafigura
+  - Glencore
+  - Gunvor
+  - Mercuria
+  - Koch Supply & Trading
+  - Freepoint Commodities
+  - Shell Trading
+  - BP Trading
+  - TotalEnergies Trading
+
+exchanges_markets:
+  - ICE
+  - Intercontinental Exchange
+  - CME Group
+  - NYMEX
+  - EEX
+  - European Energy Exchange
+  - Nord Pool
+  - EPEX SPOT
+  - OMIE
+  - MIBGAS
+  - Nasdaq Commodities
+  - Xpansiv
+  - CBL
+  - AirCarbon Exchange
+
+banks_financial_institutions:
+  - JPMorgan
+  - Goldman Sachs
+  - Morgan Stanley
+  - Citi
+  - Bank of America
+  - Barclays
+  - HSBC
+  - BNP Paribas
+  - Societe Generale
+  - ING
+  - MUFG
+  - Standard Chartered
+  - Macquarie
+  - Deutsche Bank
+
+blockchain_tokenization:
+  - VAKT
+  - Komgo
+  - Energy Web
+  - Powerledger
+  - Toucan Protocol
+  - KlimaDAO
+  - Regen Network
+  - Xpansiv
+  - Carbonplace
+  - ClimateTrade
+  - Circle
+  - Tether
+  - JPMorgan Kinexys
+  - Fnality
+  - Partior
+  - Securitize
+  - Chainlink
+  - Ondo Finance
+  - Centrifuge

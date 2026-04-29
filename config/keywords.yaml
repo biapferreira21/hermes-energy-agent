@@ -1,0 +1,84 @@
+oil:
+  - oil market
+  - crude oil
+  - Brent crude
+  - WTI crude
+  - physical oil trading
+  - oil cargo
+  - oil futures
+  - oil options
+  - oil swaps
+  - oil hedging
+  - refinery margin
+  - crack spread
+  - OPEC production
+  - spare capacity
+  - upstream oil
+  - downstream oil
+  - reserve replacement ratio
+
+gas_lng:
+  - natural gas
+  - LNG
+  - Henry Hub
+  - Dutch TTF
+  - UK NBP
+  - JKM LNG
+  - gas futures
+  - gas storage
+  - pipeline capacity
+  - regasification terminal
+  - LNG cargo
+  - LNG offtake
+
+power_renewables:
+  - electricity market
+  - day-ahead power
+  - intraday power
+  - balancing market
+  - PPA
+  - virtual PPA
+  - renewable energy
+  - solar farm
+  - wind farm
+  - offshore wind
+  - battery storage
+  - green hydrogen
+  - renewable energy certificates
+  - guarantees of origin
+
+carbon:
+  - carbon market
+  - carbon credits
+  - carbon allowances
+  - EU ETS
+  - EUA
+  - UK ETS
+  - voluntary carbon market
+  - carbon offset
+  - carbon removal
+  - REDD+
+  - direct air capture
+  - carbon registry
+  - CBAM
+  - Article 6
+  - ICVCM
+  - VCMI
+
+blockchain_tokenization:
+  - blockchain energy trading
+  - blockchain oil trading
+  - commodity tokenization
+  - tokenized commodities
+  - tokenized oil
+  - tokenized carbon credits
+  - stablecoin settlement commodities
+  - tokenized deposits trade finance
+  - blockchain trade finance
+  - digital bills of lading
+  - digital trade documents
+  - post-trade blockchain
+  - VAKT Shell
+  - Komgo commodity finance
+  - Energy Web renewables
+  - on-chain carbon credits

@@ -1,0 +1,32 @@
+# LLM e Agente
+openai>=1.30.0
+openai-agents>=0.0.3
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Utilitarios base
+python-dotenv
+requests
+httpx
+
+# Recolha de noticias
+feedparser
+beautifulsoup4
+trafilatura
+PyYAML
+
+# Base de dados
+SQLAlchemy>=2.0.0
+
+# Processamento de dados
+pandas
+numpy
+rapidfuzz
+python-dateutil
+
+# Dashboard e relatorios
+streamlit
+plotly
+
+# Scheduler
+apscheduler

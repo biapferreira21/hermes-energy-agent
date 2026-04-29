@@ -1,0 +1,180 @@
+# =============================================================
+# HERMES ENERGY AGENT - Fontes de informacao
+# rss_feeds : recolhidos automaticamente - todos testados e confirmados
+# manual_sources: scraped pelo web_scraper_collector (paginas sem RSS)
+# =============================================================
+
+rss_feeds:
+
+  # --- PETROLEO & GAS ---
+  - name: EIA Today in Energy
+    url: https://www.eia.gov/rss/todayinenergy.xml
+    source_type: official_data
+    priority: high
+
+  - name: Oilprice
+    url: https://oilprice.com/rss/main
+    source_type: energy_news
+    priority: high
+
+  - name: Rigzone
+    url: https://www.rigzone.com/news/rss/rigzone_latest.aspx
+    source_type: oil_gas_news
+    priority: high
+
+  - name: LNG Prime
+    url: https://lngprime.com/feed/
+    source_type: lng_news
+    priority: high
+
+  - name: LNG World News
+    url: https://www.lngworldnews.com/feed/
+    source_type: lng_news
+    priority: high
+
+  - name: Offshore Technology
+    url: https://www.offshore-technology.com/feed/
+    source_type: oil_gas_news
+    priority: medium
+
+  # --- CARBON & CLIMA ---
+  - name: Carbon Pulse
+    url: https://carbon-pulse.com/feed/
+    source_type: carbon_news
+    priority: high
+
+  - name: Carbon Brief
+    url: https://www.carbonbrief.org/feed/
+    source_type: carbon_news
+    priority: high
+
+  - name: Climate Home News
+    url: https://www.climatechangenews.com/feed/
+    source_type: climate_policy
+    priority: medium
+
+  # --- RENOVAVEIS & TRANSICAO ---
+  - name: PV Magazine
+    url: https://www.pv-magazine.com/feed/
+    source_type: renewables_news
+    priority: medium
+
+  - name: Energy Monitor
+    url: https://www.energymonitor.ai/feed/
+    source_type: energy_transition
+    priority: medium
+
+  # --- BLOCKCHAIN & CRIPTO ---
+  - name: Ledger Insights
+    url: https://www.ledgerinsights.com/feed/
+    source_type: blockchain_news
+    priority: high
+
+  - name: CoinDesk
+    url: https://www.coindesk.com/arc/outboundfeeds/rss/
+    source_type: crypto_news
+    priority: medium
+
+  - name: CoinTelegraph
+    url: https://cointelegraph.com/rss
+    source_type: crypto_news
+    priority: medium
+
+  - name: The Defiant
+    url: https://thedefiant.io/feed
+    source_type: defi_news
+    priority: medium
+
+  - name: Decrypt
+    url: https://decrypt.co/feed
+    source_type: crypto_news
+    priority: medium
+
+  - name: TACO Alliance Research
+    url: https://research.tacoalition.org/feed/
+    source_type: rwa_data
+    priority: high
+
+  - name: Chainlink Blog
+    url: https://blog.chain.link/rss/
+    source_type: oracle_tokenization
+    priority: medium
+
+
+  # --- NOTICIAS FINANCEIRAS ---
+  - name: Financial Times Energy
+    url: https://www.ft.com/energy?format=rss
+    source_type: financial_news
+    priority: high
+
+  # --- REGULADORES ---
+  - name: ESMA News
+    url: https://www.esma.europa.eu/rss.xml
+    source_type: regulator
+    priority: medium
+
+# -------------------------------------------------------------
+# FONTES MANUAIS - scraped automaticamente pelo web_scraper_collector
+# Falhas sao silenciosas; o pipeline continua mesmo que um site bloqueie
+# -------------------------------------------------------------
+manual_sources:
+
+  official_energy_data:
+    - {name: IEA,            url: 'https://www.iea.org/news',                           type: official_data,   priority: high}
+    - {name: OPEC,           url: 'https://www.opec.org/opec_web/en/press_room/releases.htm', type: official_data, priority: high}
+    - {name: IRENA,          url: 'https://www.irena.org/News',                          type: renewables_data, priority: high}
+    - {name: ENTSO-E,        url: 'https://www.entsoe.eu/news/',                         type: power_data,      priority: high}
+    - {name: ENTSOG,         url: 'https://www.entsog.eu/news',                          type: gas_data,        priority: high}
+    - {name: Ember,          url: 'https://ember-climate.org/insights/',                 type: power_data,      priority: medium}
+    - {name: ACER,           url: 'https://www.acer.europa.eu/news',                     type: regulator,       priority: high}
+    - {name: IRENA Newsroom, url: 'https://www.irena.org/newsroom/pressreleases',        type: renewables_data, priority: high}
+    - {name: JODI Oil,       url: 'https://www.jodidata.org/oil/',                       type: official_data,   priority: medium}
+    - {name: Eurostat Energy,url: 'https://ec.europa.eu/eurostat/web/energy',            type: official_data,   priority: medium}
+
+  portugal_iberia:
+    - {name: ERSE,           url: 'https://www.erse.pt',                                 type: regulator,       priority: high}
+    - {name: DGEG,           url: 'https://www.dgeg.gov.pt',                             type: official_data,   priority: high}
+    - {name: REN,            url: 'https://www.ren.pt',                                  type: grid_operator,   priority: high}
+    - {name: OMIE,           url: 'https://www.omie.es/en/news',                         type: power_exchange,  priority: high}
+    - {name: MIBGAS,         url: 'https://www.mibgas.es/en',                            type: gas_exchange,    priority: high}
+
+  exchanges:
+    - {name: ICE,            url: 'https://www.ice.com/insights',                        type: exchange,        priority: high}
+    - {name: CME Group,      url: 'https://www.cmegroup.com/media-room/press-releases.html', type: exchange,    priority: high}
+    - {name: EEX,            url: 'https://www.eex.com/en/news',                         type: exchange,        priority: high}
+    - {name: Nord Pool,      url: 'https://www.nordpoolgroup.com/en/message-center-container/newsroom/', type: power_exchange, priority: high}
+    - {name: EPEX SPOT,      url: 'https://www.epexspot.com/en/news',                    type: power_exchange,  priority: high}
+    - {name: Nasdaq Commodities, url: 'https://www.nasdaq.com/solutions/nasdaq-commodities', type: exchange,    priority: medium}
+    - {name: Xpansiv,        url: 'https://xpansiv.com/news',                            type: carbon_market,   priority: high}
+    - {name: AirCarbon Exchange, url: 'https://www.aircarbon.co',                        type: carbon_market,   priority: medium}
+
+  financial_news:
+    - {name: Reuters Energy, url: 'https://www.reuters.com/business/energy/',             type: news,            priority: high}
+    - {name: Bloomberg Energy, url: 'https://www.bloomberg.com/energy',                  type: news,            priority: high}
+    - {name: S&P Global Commodity Insights, url: 'https://www.spglobal.com/commodityinsights/en/latest-news', type: commodity_news, priority: high}
+    - {name: Argus Media,    url: 'https://www.argusmedia.com/en/news-and-insights',      type: commodity_news,  priority: high}
+    - {name: Energy Intelligence, url: 'https://www.energyintel.com/articles',            type: commodity_news,  priority: high}
+
+  regulators_policy:
+    - {name: EC Energy,      url: 'https://energy.ec.europa.eu/news_en',                 type: regulator,       priority: high}
+    - {name: EC Climate Action, url: 'https://climate.ec.europa.eu/news-and-events/news_en', type: regulator,   priority: high}
+    - {name: CFTC,           url: 'https://www.cftc.gov/PressRoom/PressReleases/index.htm', type: regulator,    priority: high}
+    - {name: FERC,           url: 'https://www.ferc.gov/news-events/news',               type: regulator,       priority: high}
+    - {name: SEC,            url: 'https://www.sec.gov/news/pressreleases',              type: regulator,       priority: high}
+    - {name: UNFCCC,         url: 'https://unfccc.int/news',                             type: climate_policy,  priority: high}
+    - {name: World Bank Carbon Pricing, url: 'https://carbonpricingdashboard.worldbank.org', type: carbon_data, priority: high}
+    - {name: ICVCM,          url: 'https://icvcm.org/news/',                             type: carbon_standard, priority: high}
+    - {name: VCMI,           url: 'https://vcmintegrity.org/news/',                      type: carbon_standard, priority: high}
+
+  blockchain_rwa:
+    - {name: RWA.xyz News,   url: 'https://app.rwa.xyz/news',                            type: rwa_data,        priority: high}
+    - {name: RWA.xyz,        url: 'https://rwa.xyz',                                     type: rwa_data,        priority: high}
+    - {name: DeFiLlama,      url: 'https://defillama.com',                               type: crypto_data,     priority: medium}
+    - {name: VAKT,           url: 'https://www.vakt.com',                                type: energy_blockchain, priority: high}
+    - {name: Komgo,          url: 'https://komgo.io',                                    type: trade_finance,   priority: high}
+    - {name: Energy Web,     url: 'https://www.energyweb.org/news/',                     type: energy_blockchain, priority: medium}
+    - {name: Powerledger,    url: 'https://www.powerledger.io/media',                    type: energy_blockchain, priority: medium}
+    - {name: KlimaDAO,       url: 'https://www.klimadao.finance/blog',                   type: carbon_tokenization, priority: medium}
+    - {name: Regen Network,  url: 'https://www.regen.network/blog/',                     type: carbon_tokenization, priority: medium}
+    - {name: Circle,         url: 'https://www.circle.com/blog/',                        type: stablecoin,      priority: high}
+    - {name: Ondo Finance,   url: 'https://ondo.finance/blog',                           type: rwa_data,        priority: medium}

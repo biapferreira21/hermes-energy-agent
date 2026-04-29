@@ -1,0 +1,105 @@
+asset_classes:
+  oil:
+    instruments:
+      - crude oil
+      - Brent crude
+      - WTI crude
+      - Brent futures
+      - WTI futures
+      - crude oil options
+      - oil swaps
+      - oil forwards
+      - crack spreads
+      - oil ETFs
+      - oil equities
+      - oil company bonds
+      - reserve-based lending
+
+  gas_lng:
+    instruments:
+      - natural gas
+      - LNG
+      - Henry Hub futures
+      - Dutch TTF futures
+      - UK NBP futures
+      - JKM LNG futures
+      - gas storage rights
+      - LNG offtake agreements
+      - LNG swaps
+
+  power:
+    instruments:
+      - electricity spot
+      - day-ahead power
+      - intraday power
+      - balancing power
+      - power futures
+      - power forwards
+      - PPA
+      - virtual PPA
+      - capacity contracts
+      - spark spreads
+
+  renewables:
+    instruments:
+      - solar farms
+      - wind farms
+      - offshore wind
+      - onshore wind
+      - hydropower
+      - battery storage
+      - green hydrogen
+      - biofuels
+      - renewable energy certificates
+      - guarantees of origin
+      - green bonds
+      - renewable project finance
+
+  carbon:
+    instruments:
+      - EU Allowances
+      - EUA futures
+      - UK Allowances
+      - California Carbon Allowances
+      - RGGI allowances
+      - voluntary carbon credits
+      - carbon offsets
+      - carbon removals
+      - carbon forwards
+      - carbon ETFs
+
+  blockchain_energy:
+    instruments:
+      - blockchain post-trade records
+      - digital trade documents
+      - tokenized carbon credits
+      - tokenized PPAs
+      - stablecoin settlement
+      - tokenized deposits
+      - RWA infrastructure
+
+market_layers:
+  - front_office_trading
+  - exchange_execution
+  - otc_execution
+  - clearing
+  - post_trade
+  - settlement
+  - custody
+  - registry
+  - trade_finance
+  - reporting
+  - risk_management
+
+blockchain_relations:
+  - none
+  - blockchain_data_layer
+  - digital_documents
+  - smart_contracts
+  - post_trade_reconciliation
+  - tokenization
+  - stablecoin_settlement
+  - tokenized_deposits
+  - carbon_credit_tokenization
+  - rwa_infrastructure
+  - unclear
