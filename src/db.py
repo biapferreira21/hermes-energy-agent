@@ -9,11 +9,14 @@ _db_url = settings.database_url
 if _db_url.startswith("sqlite:///") and not _db_url.startswith("sqlite:////"):
     _rel = _db_url.replace("sqlite:///", "")
     _src = Path(__file__).parent.parent / _rel
-    _dst = Path("/tmp/hermes_energy.db")
-    # On Streamlit Cloud the repo is read-only — copy DB to /tmp
-    if _src.exists() and not _dst.exists():
-        shutil.copy2(_src, _dst)
-    _path = _dst if _dst.exists() else _src
+    import platform
+    if platform.system() != "Windows":
+        _dst = Path("/tmp/hermes_energy.db")
+        if _src.exists() and not _dst.exists():
+            shutil.copy2(_src, _dst)
+        _path = _dst if _dst.exists() else _src
+    else:
+        _path = _src
     _db_url = f"sqlite:///{_path.as_posix()}"
 
 _connect_args = {"check_same_thread": False} if _db_url.startswith("sqlite") else {}
