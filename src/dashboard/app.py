@@ -244,16 +244,11 @@ st.markdown(f"""
 # Load data
 # -----------------------------------------------------------------
 init_db()
-from src.db import engine as _engine, _src as _db_src
-import os
+import os, platform as _pl
+from src.db import engine as _engine
+_repo_db = BASE_DIR / "data/hermes_energy.db"
 with st.expander("🔧 Debug (remover depois)", expanded=True):
-    st.code(f"""
-DB URL   : {_engine.url}
-_src     : {_db_src}
-_src exists: {_db_src.exists()}
-/tmp/hermes_energy.db exists: {os.path.exists('/tmp/hermes_energy.db')}
-platform : {__import__('platform').system()}
-""")
+    st.code(f"DB URL: {_engine.url}\nrepo DB exists: {_repo_db.exists()}\n/tmp DB exists: {os.path.exists('/tmp/hermes_energy.db')}\nplatform: {_pl.system()}")
 session = SessionLocal()
 rows = (
     session.query(ResearchItem)
