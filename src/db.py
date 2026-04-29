@@ -1,16 +1,18 @@
+from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 from src.settings import settings
 
-# check_same_thread=False so SQLite works with Streamlit
-_connect_args = (
-    {"check_same_thread": False}
-    if settings.database_url.startswith("sqlite")
-    else {}
-)
+_db_url = settings.database_url
+if _db_url.startswith("sqlite:///") and not _db_url.startswith("sqlite:////"):
+    _rel = _db_url.replace("sqlite:///", "")
+    _abs = Path(__file__).parent.parent / _rel
+    _db_url = f"sqlite:///{_abs.as_posix()}"
 
-engine = create_engine(settings.database_url, connect_args=_connect_args)
+_connect_args = {"check_same_thread": False} if _db_url.startswith("sqlite") else {}
+
+engine = create_engine(_db_url, connect_args=_connect_args)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
 
