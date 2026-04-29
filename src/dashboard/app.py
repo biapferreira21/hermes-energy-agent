@@ -244,8 +244,6 @@ st.markdown(f"""
 # Load data
 # -----------------------------------------------------------------
 init_db()
-from src.db import engine as _engine
-st.caption(f"🔧 DEBUG — DB: `{_engine.url}` | exists: `{Path(str(_engine.url).replace('sqlite:///','/')).exists()}`")
 session = SessionLocal()
 rows = (
     session.query(ResearchItem)
