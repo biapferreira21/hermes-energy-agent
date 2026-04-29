@@ -7,19 +7,17 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from src.settings import settings
 
 _db_url = settings.database_url
-_src = Path(__file__).parent.parent / "data/hermes_energy.db"
+_src = Path(__file__).resolve().parent.parent / "data/hermes_energy.db"
+_copy_error = ""
 
 if _db_url.startswith("sqlite:///") and not _db_url.startswith("sqlite:////"):
-    _rel = _db_url.replace("sqlite:///", "")
-
     if platform.system() != "Windows":
-        # Streamlit Cloud has a read-only repo filesystem — copy DB to /tmp
         _dst = Path("/tmp/hermes_energy.db")
         try:
             if _src.exists():
-                shutil.copy2(_src, _dst)  # always overwrite with latest from repo
-        except Exception:
-            pass
+                _dst.write_bytes(_src.read_bytes())
+        except Exception as e:
+            _copy_error = str(e)
         _path = _dst if _dst.exists() else _src
     else:
         _path = _src
