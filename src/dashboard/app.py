@@ -244,6 +244,16 @@ st.markdown(f"""
 # Load data
 # -----------------------------------------------------------------
 init_db()
+from src.db import engine as _engine, _src as _db_src
+import os
+with st.expander("🔧 Debug (remover depois)", expanded=True):
+    st.code(f"""
+DB URL   : {_engine.url}
+_src     : {_db_src}
+_src exists: {_db_src.exists()}
+/tmp/hermes_energy.db exists: {os.path.exists('/tmp/hermes_energy.db')}
+platform : {__import__('platform').system()}
+""")
 session = SessionLocal()
 rows = (
     session.query(ResearchItem)

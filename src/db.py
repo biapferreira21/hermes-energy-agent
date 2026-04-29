@@ -7,10 +7,10 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from src.settings import settings
 
 _db_url = settings.database_url
+_src = Path(__file__).parent.parent / "data/hermes_energy.db"
 
 if _db_url.startswith("sqlite:///") and not _db_url.startswith("sqlite:////"):
     _rel = _db_url.replace("sqlite:///", "")
-    _src = Path(__file__).parent.parent / _rel
 
     if platform.system() != "Windows":
         # Streamlit Cloud has a read-only repo filesystem — copy DB to /tmp
