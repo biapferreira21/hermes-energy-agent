@@ -1,3 +1,4 @@
+import shutil
 from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
@@ -7,8 +8,13 @@ from src.settings import settings
 _db_url = settings.database_url
 if _db_url.startswith("sqlite:///") and not _db_url.startswith("sqlite:////"):
     _rel = _db_url.replace("sqlite:///", "")
-    _abs = Path(__file__).parent.parent / _rel
-    _db_url = f"sqlite:///{_abs.as_posix()}"
+    _src = Path(__file__).parent.parent / _rel
+    _dst = Path("/tmp/hermes_energy.db")
+    # On Streamlit Cloud the repo is read-only — copy DB to /tmp
+    if _src.exists() and not _dst.exists():
+        shutil.copy2(_src, _dst)
+    _path = _dst if _dst.exists() else _src
+    _db_url = f"sqlite:///{_path.as_posix()}"
 
 _connect_args = {"check_same_thread": False} if _db_url.startswith("sqlite") else {}
 
